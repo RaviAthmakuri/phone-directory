@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Header from './Header';
 import './App.css';
 
+
+
+
+
 class App extends Component {
 
   render() {
@@ -21,7 +25,7 @@ class App extends Component {
     ]
     return (
       <div className="component-body-container">
-        <Header />
+        <Header heading ="Phone Directory" />
         <button className="custom-btn add-btn"> Add </button>
         <div className="grid-container heading-container">
           <span className="grid-item name-heading"> Name </span>
