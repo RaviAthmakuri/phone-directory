@@ -8,25 +8,32 @@ import './App.css';
 
 class App extends Component {
 
+  constructor(){
+    super();
+    this.state ={
+      subscribersListToShow:[]
+    }
+  }
+
   clickHandler(message){
     alert(message);
   }
 
   render() {
-    let subscribers = [
-      {
-        id:1,
-        name: "Ravi Atmakuri",
-        phone: "111111111"
+    // let subscribers = [
+    //   {
+    //     id:1,
+    //     name: "Ravi Atmakuri",
+    //     phone: "111111111"
 
-      },
-      {
-        id:2,
-        name: "Surabhi Atmakuri",
-        phone: "111345677"
+    //   },
+    //   {
+    //     id:2,
+    //     name: "Surabhi Atmakuri",
+    //     phone: "111345677"
 
-      }
-    ]
+    //   }
+    // ]
     return (
       <div className="component-body-container">
         <Header heading ="Phone Directory" />
@@ -37,7 +44,7 @@ class App extends Component {
         </div>
 
         {
-          subscribers.map(sub => {
+          this.state.subscribersListToShow.map(sub => {
             return <div key={sub.id}  className="grid-container">
               <span className="grid-item">{sub.name}</span>
               <span className="grid-item">{sub.phone}</span>
