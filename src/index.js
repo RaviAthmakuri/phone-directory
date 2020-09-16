@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import AddSubscriber from './AddSubscriber';
 import * as serviceWorker from './serviceWorker';
-
+import './common/common.css';
 ReactDOM.render(
   <React.StrictMode>
-    <App></App>
+    <AddSubscriber></AddSubscriber>
   </React.StrictMode>,
   document.getElementById('root')
 );
