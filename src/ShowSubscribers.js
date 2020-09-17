@@ -10,8 +10,9 @@ import {Link} from 'react-router-dom';
 
 class ShowSubscribers extends Component {
 
-  clickHandler(message){
-    alert(message);
+  onDeletedClick = (id) => {
+    this.props.deleteSubscriberHandler(id);
+
   }
 
   render() {
@@ -29,7 +30,7 @@ class ShowSubscribers extends Component {
             return <div key={sub.id}  className="grid-container">
               <span className="grid-item">{sub.name}</span>
               <span className="grid-item">{sub.phone}</span>
-              <button className="delete-btn" onClick={this.clickHandler.bind(this,"Delete Clicked")}>DELETE</button>
+              <button className="delete-btn" onClick={this.onDeletedClick.bind(this,sub.id)}>DELETE</button>
             </div>
           })
         }
