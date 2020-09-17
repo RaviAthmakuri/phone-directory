@@ -1,39 +1,19 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import './App.css';
+import './ShowSubscribers.css';
+import './common/common.css';
 
 
 
 
 
-class App extends Component {
-
-  constructor(){
-    super();
-    this.state ={
-      subscribersListToShow:[]
-    }
-  }
+class ShowSubscribers extends Component {
 
   clickHandler(message){
     alert(message);
   }
 
   render() {
-    // let subscribers = [
-    //   {
-    //     id:1,
-    //     name: "Ravi Atmakuri",
-    //     phone: "111111111"
-
-    //   },
-    //   {
-    //     id:2,
-    //     name: "Surabhi Atmakuri",
-    //     phone: "111345677"
-
-    //   }
-    // ]
     return (
       <div className="component-body-container">
         <Header heading ="Phone Directory" />
@@ -44,7 +24,7 @@ class App extends Component {
         </div>
 
         {
-          this.state.subscribersListToShow.map(sub => {
+          this.props.subscriberList.map(sub => {
             return <div key={sub.id}  className="grid-container">
               <span className="grid-item">{sub.name}</span>
               <span className="grid-item">{sub.phone}</span>
@@ -59,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscribers;
